@@ -1,5 +1,7 @@
 package bid.thediamonddragon.adifparser.enums;
 
+import java.util.ArrayList;
+
 public enum ARRL {
     AL("AL", "Alabama", 291),
     AK("AK", "Alaska", 6),
@@ -95,5 +97,49 @@ public enum ARRL {
         this.abbreviation = abbreviation;
         this.name = name;
         this.dxcc = dxcc;
+    }
+
+    public String getAbbreviation() {
+        return abbreviation;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int[] getDxcc() {
+        return dxcc;
+    }
+
+    public static ARRL withAbbreviation(String abbreviation){
+        for (ARRL arrl : ARRL.values()){
+            if (arrl.getAbbreviation().equals(abbreviation)){
+                return arrl;
+            }
+        }
+        return null;
+    }
+
+    public static ARRL withName(String name){
+        for (ARRL arrl : ARRL.values()){
+            if (arrl.getName().equals(name)){
+                return arrl;
+            }
+        }
+        return null;
+    }
+
+    public static ArrayList<ARRL> withDXCC(int dxcc){
+        ArrayList<ARRL> arrls = new ArrayList<>();
+
+        for (ARRL arrl : ARRL.values()){
+            for (int xcc : arrl.getDxcc()){
+                if (xcc == dxcc){
+                    arrls.add(arrl);
+                    break;
+                }
+            }
+        }
+        return arrls;
     }
 }
