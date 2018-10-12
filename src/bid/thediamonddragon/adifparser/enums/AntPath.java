@@ -21,4 +21,22 @@ public enum AntPath {
     public String getMeaning() {
         return meaning;
     }
+
+    public AntPath getByKey(char key){
+        for (AntPath antPath : AntPath.values()){
+            if (antPath.getKey() == key){
+                return antPath;
+            }
+        }
+        return null;
+    }
+
+    public AntPath getByMeaning(String meaning){
+        for (AntPath antPath : AntPath.values()){
+            if (antPath.getMeaning().equalsIgnoreCase(meaning)){
+                return antPath;
+            }
+        }
+        return null;
+    }
 }

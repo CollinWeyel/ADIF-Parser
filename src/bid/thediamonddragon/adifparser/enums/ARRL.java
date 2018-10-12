@@ -111,7 +111,7 @@ public enum ARRL {
         return dxcc;
     }
 
-    public static ARRL withAbbreviation(String abbreviation){
+    public static ARRL getByAbbreviation(String abbreviation){
         for (ARRL arrl : ARRL.values()){
             if (arrl.getAbbreviation().equals(abbreviation)){
                 return arrl;
@@ -120,7 +120,7 @@ public enum ARRL {
         return null;
     }
 
-    public static ARRL withName(String name){
+    public static ARRL getByhName(String name){
         for (ARRL arrl : ARRL.values()){
             if (arrl.getName().equals(name)){
                 return arrl;
@@ -129,7 +129,7 @@ public enum ARRL {
         return null;
     }
 
-    public static ArrayList<ARRL> withDXCC(int dxcc){
+    public static ArrayList<ARRL> wgetByDXCC(int dxcc){
         ArrayList<ARRL> arrls = new ArrayList<>();
 
         for (ARRL arrl : ARRL.values()){

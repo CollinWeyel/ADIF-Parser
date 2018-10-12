@@ -1,3 +1,5 @@
 .idea/**
 out/**
 *.iml
+
+src/bid/thediamonddragon/adifparser/enums/ContestID.java
