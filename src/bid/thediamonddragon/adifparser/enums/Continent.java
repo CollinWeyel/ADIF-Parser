@@ -26,7 +26,7 @@ public enum Continent {
         return name;
     }
 
-    public Continent getByAbbreviation(String abbreviation){
+    public static Continent getByAbbreviation(String abbreviation){
         for (Continent continent : Continent.values()){
             if (continent.getAbbreviation().equals(abbreviation)){
                 return continent;
@@ -35,7 +35,7 @@ public enum Continent {
         return null;
     }
 
-    public Continent getByName(String name){
+    public static Continent getByName(String name){
         for (Continent continent : Continent.values()){
             if (continent.getName().equalsIgnoreCase(name)){
                 return continent;

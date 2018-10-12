@@ -55,4 +55,17 @@ public enum Mode {
     Mode(String name){
         this.name = name;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public static Mode getByName(String name){
+        for (Mode mode : Mode.values()){
+            if (mode.getName().equalsIgnoreCase(name)){
+                return mode;
+            }
+        }
+        return null;
+    }
 }

@@ -52,7 +52,7 @@ public enum Band {
         return upperFrequency;
     }
 
-    public Band getByName(String name){
+    public static Band getByName(String name){
         for (Band band : Band.values()){
             if (band.getName().equalsIgnoreCase(name)){
                 return band;
@@ -61,7 +61,7 @@ public enum Band {
         return null;
     }
 
-    public Band getByFrequency(double frequency){
+    public static Band getByFrequency(double frequency){
         for (Band band : Band.values()){
             if (frequency >= band.getLowerFrequency() && frequency <= band.getUpperFrequency()){
                 return band;

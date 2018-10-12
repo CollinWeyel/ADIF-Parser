@@ -40,4 +40,30 @@ public enum DXCCEntityCode {
         this.code = code;
         this.name= name;
     }
+
+    public int getCode() {
+        return code;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public static DXCCEntityCode getByCode(int code){
+        for (DXCCEntityCode dxccEntityCode : DXCCEntityCode.values()){
+            if (dxccEntityCode.getCode() == code){
+                return dxccEntityCode;
+            }
+        }
+        return null;
+    }
+
+    public static  DXCCEntityCode getByName(String name){
+        for (DXCCEntityCode dxccEntityCode : DXCCEntityCode.values()){
+            if (dxccEntityCode.getName().equalsIgnoreCase(name)){
+                return dxccEntityCode;
+            }
+        }
+        return null;
+    }
 }
